@@ -1,10 +1,17 @@
-lda 2001
-mov b,a
-lda 2005
-mov c,a
+lhld 2001
+xchg
+lhld 2020
+mov c,h
 mvi a,00h
-loop: add b
+loop: add d
 dcr c
 jnz loop
-sta 2020
+mov h,a
+mov b,l
+mvi a,00h
+lp: add e
+dcr b
+jnz lp
+mov l,a
+shld 2050
 hlt
