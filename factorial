@@ -1,0 +1,16 @@
+lda 2001
+mov b,a
+mvi c,#01
+mvi e,#01
+loop: mov d,c
+mvi a,00h
+lp: add e
+dcr d
+jnz lp
+mov e,a
+inr c
+dcr b
+jnz loop
+mov a,e
+sta 2010
+hlt
